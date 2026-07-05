@@ -1,0 +1,111 @@
+:root{
+  --bg:#0b1220;
+  --card:#121a2b;
+  --muted:#9aa6c0;
+  --text:#e8eefc;
+  --primary:#4f8cff;
+  --danger:#ff5a6a;
+  --ok:#35d07f;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg,#0b1220 0%, #0a1020 100%);
+  color: var(--text);
+}
+
+.container{
+  max-width: 1000px;
+  margin: 26px auto;
+  padding: 0 16px;
+}
+
+.header{
+  text-align:center;
+  margin-bottom: 18px;
+}
+
+.header h1{margin:0 0 6px}
+.subtitle{margin:0; color: var(--muted)}
+
+.products, .payment{
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.products{margin-bottom: 18px;}
+
+.products h2, .payment h2{margin-top:0; margin-bottom: 14px;}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.product-card{
+  border: 1px solid rgba(255,255,255,0.10);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 14px;
+  cursor:pointer;
+  text-align:left;
+  transition: transform .08s ease, border-color .15s ease;
+}
+
+.product-card:hover{transform: translateY(-2px); border-color: rgba(79,140,255,0.6)}
+.product-card.selected{border-color: rgba(79,140,255,0.95); box-shadow: 0 0 0 2px rgba(79,140,255,0.18)}
+
+.product-name{display:block; font-weight:700; font-size: 16px; margin-bottom: 6px}
+.product-price{color: var(--muted); display:block; font-weight:600}
+
+.row{display:flex; gap: 12px; flex-wrap:wrap; margin-bottom: 12px;}
+.field{flex:1; min-width: 220px; display:flex; flex-direction:column; gap:6px;}
+
+label{color: var(--muted); font-size: 13px}
+input{
+  width:100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+  outline:none;
+}
+input:focus{border-color: rgba(79,140,255,0.75)}
+
+.actions{display:flex; gap: 12px; flex-wrap:wrap; margin: 8px 0 14px;}
+.btn{
+  background: var(--primary);
+  color: #071020;
+  border: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor:pointer;
+  font-weight:800;
+}
+.btn.secondary{
+  background: rgba(255,255,255,0.10);
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.message{
+  border-radius: 12px;
+  padding: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.09);
+  min-height: 44px;
+}
+
+.message.ok{border-color: rgba(53,208,127,0.45); background: rgba(53,208,127,0.10)}
+.message.err{border-color: rgba(255,90,106,0.45); background: rgba(255,90,106,0.10)}
+
+.change-list{margin-top: 12px; color: var(--muted)}
+.change-list ul{padding-left: 18px; margin: 6px 0}
+

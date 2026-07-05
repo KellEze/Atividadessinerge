@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Máquina de Vendas</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Máquina de Vendas</h1>
+      <p class="subtitle">Escolha um produto, insira o dinheiro e finalize a compra.</p>
+    </header>
+
+    <section class="products">
+      <h2>Produtos</h2>
+      <div class="grid" id="products-grid">
+        <button class="product-card" type="button" data-id="agua" data-price="3.00">
+          <span class="product-name">Água</span>
+          <span class="product-price">R$ 3,00</span>
+        </button>
+        <button class="product-card" type="button" data-id="refrigerante" data-price="5.00">
+          <span class="product-name">Refrigerante</span>
+          <span class="product-price">R$ 5,00</span>
+        </button>
+        <button class="product-card" type="button" data-id="suco" data-price="6.00">
+          <span class="product-name">Suco</span>
+          <span class="product-price">R$ 6,00</span>
+        </button>
+        <button class="product-card" type="button" data-id="salgadinho" data-price="7.00">
+          <span class="product-name">Salgadinho</span>
+          <span class="product-price">R$ 7,00</span>
+        </button>
+        <button class="product-card" type="button" data-id="chocolate" data-price="4.00">
+          <span class="product-name">Chocolate</span>
+          <span class="product-price">R$ 4,00</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="payment">
+      <h2>Pagamento</h2>
+
+      <div class="row">
+        <div class="field">
+          <label for="selected-product">Produto escolhido</label>
+          <input id="selected-product" type="text" readonly placeholder="Selecione um produto" />
+        </div>
+
+        <div class="field">
+          <label for="selected-price">Preço</label>
+          <input id="selected-price" type="text" readonly placeholder="R$ 0,00" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="valorPago">Valor pago (R$)</label>
+          <input id="valorPago" type="number" min="0" step="0.01" placeholder="Ex: 10.00" />
+        </div>
+
+        <div class="field">
+          <label for="troco">Troco</label>
+          <input id="troco" type="text" readonly placeholder="—" />
+        </div>
+      </div>
+
+      <div class="actions">
+        <button class="btn" type="button" id="btnComprar">Comprar</button>
+        <button class="btn secondary" type="button" id="btnLimpar">Limpar</button>
+      </div>
+
+      <div id="mensagem" class="message" aria-live="polite"></div>
+
+      <div id="troco-notas" class="change-list"></div>
+    </section>
+  </main>
+</body>
+</html>
+
